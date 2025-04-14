@@ -8,6 +8,7 @@ import androidx.navigation.compose.*
 import com.example.profileifluens.ui.ProfileScreen
 import com.example.profileifluens.ui.AccountDetailScreen
 import com.example.profileifluens.ui.NotificationScreen
+import com.example.profileifluens.ui.HomeScreen
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContent {
             val navController = rememberNavController()
-            NavHost(navController = navController, startDestination = "profile") {
+            NavHost(navController = navController, startDestination = "Homepage") {
 
                 composable("profile") {
                     ProfileScreen(navController)
@@ -27,6 +28,9 @@ class MainActivity : AppCompatActivity() {
 
                 composable("notification") {
                     NotificationScreen(navController)
+                }
+                composable("Homepage"){
+                    HomeScreen(navController)
                 }
 
             }
