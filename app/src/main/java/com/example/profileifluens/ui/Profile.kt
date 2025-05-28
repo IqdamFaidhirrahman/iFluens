@@ -26,7 +26,7 @@ import com.example.profileifluens.R
 @Composable
 fun ProfileScreen(navController: NavHostController) {
     Scaffold(
-        bottomBar = { BottomNavBar() }
+        bottomBar = { BottomNavBar() },
     ) { padding ->
         Column(
             modifier = Modifier
@@ -88,7 +88,9 @@ fun ProfileScreen(navController: NavHostController) {
                     MenuItem(title = "Notifikasi") {
                         navController.navigate("notification")
                     }
-                    MenuItem(title = "Password dan keamanan") { }
+                    MenuItem(title = "Password dan keamanan") {
+                        navController.navigate("password")
+                    }
                     MenuItem(title = "Tentang") { }
                     MenuItem(title = "Kebijakan privasi") { }
                 }
