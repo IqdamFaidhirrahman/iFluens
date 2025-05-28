@@ -1,7 +1,0 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Base.Theme.Kelassaya" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Opsional override -->
-    </style>
-
-    <style name="Theme.Kelassaya" parent="Base.Theme.Kelassaya" />
-</resources>
