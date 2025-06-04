@@ -12,6 +12,7 @@ import com.example.profileifluens.ui.AccountDetailScreen
 import com.example.profileifluens.ui.EditProfileScreen
 import com.example.profileifluens.ui.NotificationScreen
 import com.example.profileifluens.ui.PasswordSecurityScreen
+import com.example.profileifluens.viewmodel.AccountViewModel
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

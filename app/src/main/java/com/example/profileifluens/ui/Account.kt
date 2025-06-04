@@ -25,8 +25,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.example.profileifluens.ViewModel.AccountViewModel
 import com.example.profileifluens.R
+import com.example.profileifluens.viewmodel.AccountViewModel
 
 @Composable
 fun AccountDetailScreen(
@@ -100,11 +100,15 @@ fun AccountDetailScreen(
                 color = Color.White
             ) {
                 Column(modifier = Modifier.padding(16.dp)) {
-                    DetailItem("Nama", viewModel.name.value)
-                    DetailItem("Jenis Kelamin", viewModel.gender.value)
-                    DetailItem("Tanggal Lahir", viewModel.birthDate.value)
-                    DetailItem("No. Handphone", viewModel.phone.value)
-                    DetailItem("Email", viewModel.email.value)
+                    viewModel.userProfile?.let { profile ->
+                        DetailItem("Nama", profile.name)
+                        DetailItem("Jenis Kelamin", profile.gender)
+                        DetailItem("Tanggal Lahir", profile.birthDate)
+                        DetailItem("No. Handphone", profile.phone)
+                        DetailItem("Email", profile.email)
+                    } ?: run {
+                        Text("Memuat data...", color = Color.Gray)
+                    }
                 }
             }
         }
